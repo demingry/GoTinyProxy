@@ -13,4 +13,4 @@ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ng
     && chmod +x ngrok \
     && rm ngrok.zip
 
-CMD ["./proxy-server && ./ngrok http 18080 --log stdout --log-level debug --region us --authtoken $NGROK_AUTH_TOKEN"]
+CMD ["sh", "-c", "./proxy-server & ./ngrok http 18080 --log stdout --log-level debug --region us --authtoken $NGROK_AUTH_TOKEN"]
